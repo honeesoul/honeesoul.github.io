@@ -24,6 +24,7 @@
   --title:#786b46;
   --desc:#3f3d36;
   --base: #3f3d36;
+  --transparent-base: #3f3d368a;
   --pink: #ffbf00;
   --deep-purple:#a588bb;
   --purple:#c3a0df;
@@ -210,7 +211,7 @@ button:hover {
 }
 .divide-line {
   margin: 3rem 3rem;
-  border: 0.7px solid var(--base)
+  border: 0.7px solid rgb(218 218 218)
 }
 .main-greeting {
   margin: 0 auto;
