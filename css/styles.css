@@ -511,6 +511,9 @@ calendar
 .album {
   text-align: center;
 }
+.album .row {
+  margin: auto;
+}
 
 .square:after {
   content: "";
