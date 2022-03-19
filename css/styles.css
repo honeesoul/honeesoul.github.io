@@ -110,17 +110,10 @@ button:hover {
 .title p {
   color: var(--title);
   font-size: 2em;
-  margin: 0 auto;
-  padding : 0.5rem;
+  /* margin: 0 auto; */
+  /* padding : 0.5rem; */
   letter-spacing: 0.3rem;
-  /* padding-left: 0.5rem;
-  padding-bottom: 0.5rem; */
-  /* letter-spacing: 1.5rem; */
-}
-.desc p {
-  /* font-size: 1.4rem; */
-  margin: 0 auto;
-  padding : 0.5rem;
+  
   /* padding-left: 0.5rem;
   padding-bottom: 0.5rem; */
   /* letter-spacing: 1.5rem; */
@@ -142,10 +135,7 @@ button:hover {
 .container {
   font-size: 1.3rem;
   max-width: 768px;
-  margin:0 auto;
   width:100%;
-  padding-left:0;
-  padding-right:0;
 }
 @media (min-width: 350px) {
   .container {
@@ -182,7 +172,7 @@ button:hover {
   color:var(--deep-purple);
   margin-top: 0.5em; 
   margin-left: 0.5em; 
-  font-size: 2.1em;
+  font-size: 2rem!important;
   margin-bottom: 0.5rem;
   font-weight: 500;
 
@@ -201,11 +191,11 @@ button:hover {
   justify-content: center;
   align-items: center;
   display: flex;
-  font-size: 2em;
+  font-size: 2rem;
   letter-spacing: 0.8rem;
 }
 .main-info-location p {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   text-align: center;
   margin: 0;
 }
@@ -222,14 +212,14 @@ button:hover {
 }
 .main-greeting-title p {
   letter-spacing: 0.3rem;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 0.4rem 0;
 }
 .main-greeting-title p span {
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 .main-greeting-text p {
-  font-size: 1.27em;
+  font-size: 1.27rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0.3rem 0;
@@ -249,27 +239,24 @@ button:hover {
     /* height: 95rem; */
   }
   .main-info-location p {
-  font-size: 1.7em;
+  font-size: 1.7rem;
 }
   .main-greeting-title {
   padding-bottom: 4rem;
 }
   .main-greeting-title p span {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
   .main-greeting-title p {
-    font-size: 1.7em;
+    font-size: 1.7rem;
   }
   .main-greeting-text p {
-    font-size: 1.4em;
+    font-size: 1.4rem;
     margin-top: 0.5rem;
     padding: 0.3rem 0;
   }
   .main-greeting {
     margin: 0 auto;
-  }
-  .divide-line {
-    margin: 3rem 2rem;
   }
   .album-row {
     margin: 3rem 2rem;
@@ -290,14 +277,11 @@ button:hover {
   .main-greeting {
     padding: 0 2.7rem;
   }
-  .divide-line {
-    margin: 3rem 2.5rem;
-  }
   .album-row {
     margin: 3rem 2.5rem;
   }
     .main-greeting-text p {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin-top: 0.5rem;
     padding: 0.3rem 0;
   }
@@ -307,19 +291,19 @@ button:hover {
     /* height: 105rem; */
   }
   .main-info-title p {
-    font-size:2.3em;
+    font-size:2.3rem;
 }
 .main-info-location p {
-  font-size: 1.7em;
+  font-size: 1.7rem;
 }
   .main-greeting-title p span {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
   .main-greeting-title p {
-    font-size: 1.8em;
+    font-size: 1.8rem;
   }
   .main-greeting-text p {
-    font-size: 1.6em;
+    font-size: 1.6rem;
     margin-top: 0.5rem;
     padding: 0.3rem 0;
   }
@@ -332,9 +316,6 @@ button:hover {
   .bottom-img img {
   /* transform: translate(0, -40%); */
 }
-  .divide-line {
-    margin: 3rem 3rem;
-  }
   .album-row {
     margin: 3rem 3rem;
   }
@@ -382,7 +363,7 @@ calendar
   font-size: 1.1rem;
 }
 .week1 {
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
 }
 .week1,
 .week2,
@@ -406,7 +387,7 @@ calendar
   height: 3rem;
   border-radius: 30px;
   transform: translate(-0.7rem, -2.5rem);
-  background: #a588bb;
+  background: var(--deep-purple);
   text-align: center;
 }
 .holiday {
@@ -421,7 +402,7 @@ calendar
   font-size: 1.5rem;
 }
 .counting span {
-  color: #c3a0df;
+  color: var(--purple);
 }
 @media (max-width: 320px) {
   #bar {
@@ -481,25 +462,7 @@ calendar
   /* text-align: center; */
 }
 
-/*
-* gift 
-*/
 
-.account-info {
-  margin: 5rem 0;
-}
-.account-info p {
-  text-align: center;
-  margin: 0;
-}
-.account-info p:nth-child(1) {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-.account-info p:nth-child(2) {
-  font-size: 1.3rem;
-  padding-bottom: 3rem;
-}
 
 /*
 * album 
@@ -564,3 +527,97 @@ calendar
   padding: 1.5vh;
   background-color: var(--transparent-purple);
 }
+
+.account-btn {
+  display: flex;
+  border-radius: 1rem;
+    /* border: none; */
+    /* background: #ceb2e4; */
+    color: var(--purple);
+    border: 1px solid var(--deep-purple);
+    margin: 0 auto;
+    width: 100%;
+    height: 4rem;
+    min-width: 16vw;
+    white-space: nowrap;
+    font-size: 1.5rem;
+}
+
+.account-btn:hover {
+  color: var(--deep-purple);
+}
+
+/*
+* gift 
+*/
+
+.account-info .modal-header {
+  justify-content : center;
+}
+.account-info .modal-header h5 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+
+
+.account-info {
+  margin: 5rem 0;
+  padding: 1rem;
+  word-break: break-all;
+  /* max-height: 30rem; */
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.col-btn {
+  float: right;
+    text-align: center;
+    border: 1px solid var(--base);
+    /* background: #757575; */
+    color: var(--base);
+    font-size: 1.2rem;
+}
+.col-btn:hover {
+  color: var(--title);
+}
+
+.col-text {
+  font-size: 1.4rem;
+  float: left;
+  text-align: start;
+}
+
+.modal-img {
+  display: flex;
+  width: 100%;
+  height: 90vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 90);
+  object-fit: cover;
+  /* object-position: center; */
+  overflow: hidden;
+  /* cursor: pointer; */
+}
+
+.album-modal-body {
+  padding : 0;
+}
+
+/* .carousel-control-prev-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+	width: 30px;
+	height: 48px;
+}
+.carousel-control-next-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+	width: 30px;
+	height: 48px;
+} */
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a588bb' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+ }
+ 
+ .carousel-control-next-icon {
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a588bb' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+ }

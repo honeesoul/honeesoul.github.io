@@ -1,6 +1,7 @@
 const useGoogleDrive = true;
 const albumImgCount = 28;
 
+
 // 디데이
 var dDayholder = document.getElementById("d-day-holder");
 var count = new Date().getTime();
@@ -22,15 +23,17 @@ function setScreenSize() {
 
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
-  
+
+
+// album
 var dAlbumHolder = document.getElementById('album-holder');
 var lastAlbumImgIdx = 0;
 
-for (var i = 0; i < albumImgCount-1; i++) {
+for (var i = 0; i < albumImgCount; i++) {
     var thumbImgs = thumbImgLinks();
 
     dAlbumHolder.innerHTML += `        
-    <a class="col-sm-4 col-4 p-3" data-bs-toggle="modal" data-bs-target="#modal-album" data-bs-slide-to="${i}">
+    <a class="col-sm-3 col-3 p-1" data-bs-toggle="modal" data-bs-target="#modal-album" data-bs-slide-to="${i}">
         <div class="square">
             <img class="thumbnail lazy wow fadeIn" data-src="${thumbImgs[i+1]}" alt="">
         </div>
@@ -43,11 +46,26 @@ function thumbImgLinks() {
     var thumbImgs = {};
 
     for (var i = 0; i < albumImgCount; i++) {
-        thumbImgs[i] = `images/gallery/${i+1}.jpg`;
+        thumbImgs[i+1] = `images/gallery/${i+1}.jpg`;
     }
 
     return thumbImgs;
 }
+
+var dModalHolder = document.getElementById('modal-holder');
+for (var i = 0; i < albumImgCount; i++) {
+    var modalImgs = modalImgLinks();
+
+    dModalHolder.innerHTML += `        
+    <div class="carousel-item ${i == 0 ? 'active' : ''}" data-bs-dismiss="modal">
+        <img class="modal-img lazy" data-src="${modalImgs[i+1]}" id="modal-img-${i+1}">
+    </div>
+    `;
+}
+
+
+
+
 
 // Lazy
 document.addEventListener("DOMContentLoaded", function() {
@@ -79,6 +97,59 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("resize", lazyload);
     window.addEventListener("orientationChange", lazyload);
 });
+
+///
+// modal img load
+var lazyloadmodal = document.querySelector("#modal-album");
+lazyloadmodal.addEventListener('show.bs.modal', function() {
+    loadModalImg();
+});
+
+var myCarousel = document.querySelector('#album-ctrls')
+myCarousel.addEventListener('slid.bs.carousel', function() {
+    loadModalImg();
+})
+
+function loadModalImg() {
+    var lazyloadImages = lazyloadmodal.querySelectorAll("img.modal-img");
+    var prevImg;
+    var nextImg;
+    lazyloadImages.forEach(function(img) {
+        if (img.parentElement.classList.contains('active')) {
+            if (img.classList.contains('lazy')) {
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+            }
+
+            prevImg = document.querySelector("#modal-img-" + (Number(img.id.replace("modal-img-", "")) - 1))
+            nextImg = document.querySelector("#modal-img-" + (Number(img.id.replace("modal-img-", "")) + 1))
+        }
+    })
+    if (prevImg != null && prevImg.classList.contains('lazy')) {
+        prevImg.src = prevImg.dataset.src;
+        prevImg.classList.remove('lazy');
+    }
+
+    if (nextImg != null && nextImg.classList.contains('lazy')) {
+        nextImg.src = nextImg.dataset.src;
+        nextImg.classList.remove('lazy');
+    }
+}
+///
+
+
+var myCarousel = document.querySelector('#album-ctrls')
+var myModalEl = document.getElementById('modal-album')
+
+myModalEl.addEventListener('show.bs.modal', function(event) {
+    const trigger = event.relatedTarget
+    var bsCarousel = bootstrap.Carousel.getInstance(myCarousel)
+    bsCarousel.to(trigger.dataset.bsSlideTo)
+})
+
+////
+
+
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -96,4 +167,27 @@ function scrollFunction() {
         mybutton.classList.remove('d-inline-flex');
         mybutton.classList.add('d-none');
     }
+}
+
+function copyThis(targetEl){
+
+    var text = targetEl.dataset.text;
+    var textarea = document.createElement('textarea'); 
+    textarea.value = text; // 복사할 메시지 
+    document.body.appendChild(textarea); 
+    textarea.select(); 
+    textarea.setSelectionRange(0, 9999); // For IOS 
+    document.execCommand('copy'); 
+    document.body.removeChild(textarea);
+    alert('클립보드에 복사되었습니다.');
+}
+
+function modalImgLinks() {
+    var modalImgs = {};
+
+    for (var i = 0; i < albumImgCount; i++) {
+        modalImgs[i+1] = `images/gallery/${i+1}.jpg`;
+    }
+
+    return modalImgs;
 }
