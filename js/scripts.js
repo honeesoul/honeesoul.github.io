@@ -169,16 +169,17 @@ function scrollFunction() {
     }
 }
 
-function copyThis(targetEl){
+function copyThis(evt){
+    var text = evt.dataset.bank;
+    console.log(evt);
+    console.log(text);
 
-    var text = targetEl.dataset.text;
-    var textarea = document.createElement('textarea'); 
-    textarea.value = text; // 복사할 메시지 
-    document.body.appendChild(textarea); 
-    textarea.select(); 
-    textarea.setSelectionRange(0, 9999); // For IOS 
-    document.execCommand('copy'); 
-    document.body.removeChild(textarea);
+    var aux = document.createElement("input");
+    aux.setAttribute("value", text);
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
     alert('클립보드에 복사되었습니다.');
 }
 
