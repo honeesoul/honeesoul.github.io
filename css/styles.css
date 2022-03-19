@@ -29,6 +29,7 @@
   --deep-purple:#a588bb;
   --purple:#c3a0df;
   --transparent-purple:#c3a0dfa9;
+  --lavender:#E6E6FA;
 }
 
 /* common */
@@ -76,23 +77,28 @@ button:hover {
 }
 
 .blankspace-1 {
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .blankspace-2 {
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .blankspace-3 {
-  padding-top: 3em;
-  padding-bottom: 3em;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .blankspace-4 {
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.blankspace-5 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .margin-10 {
@@ -537,10 +543,11 @@ calendar
     border: 1px solid var(--deep-purple);
     margin: 0 auto;
     width: 100%;
-    height: 4rem;
+    padding: 0.5rem;
     min-width: 16vw;
     white-space: nowrap;
     font-size: 1.5rem;
+    justify-content: center;
 }
 
 .account-btn:hover {
@@ -548,7 +555,7 @@ calendar
 }
 
 /*
-* gift 
+* gift - account-info = modal-content
 */
 
 .account-info .modal-header {
@@ -559,9 +566,19 @@ calendar
   font-weight: 700;
 }
 
+.account-info .modal-footer button{
+  color: var(--lavender);
+  background-color: var(--deep-purple);
+}
 
+.account-info .col-btn{
+  color: var(--purple);
+  /* background-color: var(--deep-purple); */
+  border: 1px solid var(--deep-purple);
+}
 
 .account-info {
+  color: var(--deep-purple);
   margin: 5rem 0;
   padding: 1rem;
   word-break: break-all;
@@ -593,26 +610,14 @@ calendar
   width: 100%;
   height: 90vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 90);
-  object-fit: cover;
+  object-fit: contain;
   /* object-position: center; */
   overflow: hidden;
   /* cursor: pointer; */
 }
-
 .album-modal-body {
   padding : 0;
 }
-
-/* .carousel-control-prev-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-	width: 30px;
-	height: 48px;
-}
-.carousel-control-next-icon {
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-	width: 30px;
-	height: 48px;
-} */
 
 .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a588bb' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
@@ -621,3 +626,118 @@ calendar
  .carousel-control-next-icon {
    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23a588bb' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
  }
+
+ .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 45rem;
+ }
+
+ .contact-1,
+.contact-2 {
+  display: flex;
+}
+
+
+.buttons {
+  display: flex;
+  padding-top: 3.4rem;
+  justify-content: space-around;
+  width: 8rem;
+  opacity: 0.6;
+}
+
+.parents-btn {
+  display: flex;
+    border-radius: 1rem;
+    color: var(--purple);
+    border: 1px solid var(--deep-purple);
+    margin: 3rem auto;
+    padding: 0.5rem;
+    width: 100%;
+    min-width: 16vw;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+
+.parents-btn:hover {
+  color: var(--deep-purple);
+}
+
+
+.toggle-box {
+  display: flex;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.contact-1 p,
+.contact-2 p {
+  font-size: 1.6rem;
+  display: flex;
+  margin: 0;
+  padding-top: 3rem;
+  padding-right: 3rem;
+}
+
+.contact-1-call img,
+.contact-2-call img,
+.contact-1-msg img,
+.contact-2-msg img {
+  margin-right: 1rem;
+  width: 1.5rem;
+}
+.parents {
+  padding: 1rem 0 1rem 1.5rem;
+}
+.grooms,
+.brides {
+  margin: 0 3rem;
+}
+
+@media (min-width: 350px) {
+  .contact-1 p,
+  .contact-2 p {
+    font-size: 1.7rem;
+    display: flex;
+    margin: 0;
+    padding-top: 3rem;
+    padding-right: 3rem;
+  }
+  .contact-1-call img,
+  .contact-2-call img,
+  .contact-1-msg img,
+  .contact-2-msg img {
+    margin-right: 1rem;
+    width: 1.6rem;
+  }
+  .parents {
+    padding: 1rem 0 1rem 1.5rem;
+  }
+  .grooms p,
+  .brides p {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 420px) {
+  .contact-1 p,
+  .contact-2 p {
+    font-size: 1.8rem;
+    display: flex;
+    margin: 0;
+    padding-top: 3.2rem;
+    padding-right: 3rem;
+  }
+  .contact-1-call img,
+  .contact-2-call img,
+  .contact-1-msg img,
+  .contact-2-msg img {
+    margin-right: 1rem;
+    width: 1.8rem;
+  }
+  .grooms p,
+  .brides p {
+    font-size: 1.8rem;
+  }
+}

@@ -63,10 +63,6 @@ for (var i = 0; i < albumImgCount; i++) {
     `;
 }
 
-
-
-
-
 // Lazy
 document.addEventListener("DOMContentLoaded", function() {
     var lazyloadImages = document.querySelectorAll("img.lazy.thumbnail");
@@ -147,7 +143,6 @@ myModalEl.addEventListener('show.bs.modal', function(event) {
     bsCarousel.to(trigger.dataset.bsSlideTo)
 })
 
-////
 
 
 function topFunction() {
@@ -167,20 +162,6 @@ function scrollFunction() {
         mybutton.classList.remove('d-inline-flex');
         mybutton.classList.add('d-none');
     }
-}
-
-function copyThis(evt){
-    var text = evt.dataset.bank;
-    console.log(evt);
-    console.log(text);
-
-    var aux = document.createElement("input");
-    aux.setAttribute("value", text);
-    document.body.appendChild(aux);
-    aux.select();
-    document.execCommand("copy");
-    document.body.removeChild(aux);
-    alert('클립보드에 복사되었습니다.');
 }
 
 function modalImgLinks() {
